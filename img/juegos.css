@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+.florUno {
+  position: fixed;
+  -webkit-animation-name: florUno;
+          animation-name: florUno;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+}
+
+.juego {
+  background: white;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: colum;
+      flex-wrap: colum;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background-image: url("../img/fondoJuego.png");
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.juego header {
+  width: 100%;
+}
+
+.juego header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 40px;
+  padding: 0 130px;
+}
+
+.juego header nav .nav-logo img {
+  width: 50%;
+}
+
+.juego header nav .nav-text a {
+  color: black;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  margin: 0 10px;
+  font-size: 16px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  opacity: .5;
+}
+
+.juego header nav .nav-text-select {
+  color: #49a083 !important;
+  opacity: 1 !important;
+  border-bottom: solid 2px #49a083;
+}
+
+.juego header nav .nav-text a:hover {
+  opacity: 1;
+  color: #49a083;
+}
+
+.juego .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 70vh;
+  width: 60%;
+}
+
+.juego .content article {
+  margin: 0 50px;
+}
+
+.juego .content article p {
+  font-family: "Quicksand", sans-serif;
+  color: #49a083;
+  font-size: 20px;
+  width: 70%;
+  margin-bottom: 50px;
+}
+
+.juego .content article a {
+  background: #9dd67e;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  border-bottom: solid 7px #2b8063;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  letter-spacing: .5px;
+  text-decoration: none;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.juego .content article a:hover {
+  background: #86b86b;
+  cursor: pointer;
+}
+
+.florUno {
+  position: fixed;
+  -webkit-animation-name: florUno;
+          animation-name: florUno;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+  top: 1px;
+  left: 10px;
+}
+
+.florDos {
+  position: fixed;
+  -webkit-animation-name: florDos;
+          animation-name: florDos;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+  top: 40px;
+  left: -50px;
+}
+
+.florTres {
+  position: fixed;
+  -webkit-animation-name: florTres;
+          animation-name: florTres;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+  top: -40px;
+  left: -50px;
+}
+
+@-webkit-keyframes florUno {
+  from {
+    -webkit-transform: rotate(0) scale(0.2);
+            transform: rotate(0) scale(0.2);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(0.3);
+            transform: rotate(360deg) scale(0.3);
+  }
+}
+
+@keyframes florUno {
+  from {
+    -webkit-transform: rotate(0) scale(0.2);
+            transform: rotate(0) scale(0.2);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(0.3);
+            transform: rotate(360deg) scale(0.3);
+  }
+}
+
+@-webkit-keyframes florDos {
+  from {
+    -webkit-transform: rotate(-50deg) scale(0.18);
+            transform: rotate(-50deg) scale(0.18);
+  }
+  to {
+    -webkit-transform: rotate(410deg) scale(0.22);
+            transform: rotate(410deg) scale(0.22);
+  }
+}
+
+@keyframes florDos {
+  from {
+    -webkit-transform: rotate(-50deg) scale(0.18);
+            transform: rotate(-50deg) scale(0.18);
+  }
+  to {
+    -webkit-transform: rotate(410deg) scale(0.22);
+            transform: rotate(410deg) scale(0.22);
+  }
+}
+
+@-webkit-keyframes florTres {
+  from {
+    -webkit-transform: rotate(500deg) scale(0.14);
+            transform: rotate(500deg) scale(0.14);
+  }
+  to {
+    -webkit-transform: rotate(-80deg) scale(0.18);
+            transform: rotate(-80deg) scale(0.18);
+  }
+}
+
+@keyframes florTres {
+  from {
+    -webkit-transform: rotate(500deg) scale(0.14);
+            transform: rotate(500deg) scale(0.14);
+  }
+  to {
+    -webkit-transform: rotate(-80deg) scale(0.18);
+            transform: rotate(-80deg) scale(0.18);
+  }
+}
+/*# sourceMappingURL=juegos.css.map */

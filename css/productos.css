@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
-.personal {
+.productos {
   background: white;
   height: 100vh;
   display: -webkit-box;
@@ -27,11 +27,11 @@
   background-repeat: no-repeat;
 }
 
-.personal header {
+.productos header {
   width: 100%;
 }
 
-.personal header nav {
+.productos header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,11 +53,11 @@
   padding: 0 130px;
 }
 
-.personal header nav .nav-logo img {
+.productos header nav .nav-logo img {
   width: 50%;
 }
 
-.personal header nav .nav-text a {
+.productos header nav .nav-text a {
   color: black;
   text-decoration: none;
   font-family: "Quicksand", sans-serif;
@@ -69,18 +69,18 @@
   opacity: .5;
 }
 
-.personal header nav .nav-text-select {
+.productos header nav .nav-text-select {
   color: #49a083 !important;
   opacity: 1 !important;
   border-bottom: solid 2px #49a083;
 }
 
-.personal header nav .nav-text a:hover {
+.productos header nav .nav-text a:hover {
   opacity: 1;
   color: #49a083;
 }
 
-.personal .content {
+.productos .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,15 +98,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 70vh;
+  min-height: 90vh;
   padding: 0 130px;
 }
 
-.personal .content article {
+.productos .content article {
   width: 80%;
 }
 
-.personal .content-top {
+.productos .content-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,7 +126,7 @@
           align-items: center;
 }
 
-.personal .content-bottom {
+.productos .content-bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,29 +134,29 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.personal .content-bottom-card {
+.productos .content-bottom-card {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-pack: center;
@@ -169,13 +169,20 @@
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-bottom: 100px;
 }
 
-.personal .content-bottom-card p {
+.productos .content-bottom-card img {
+  margin-right: 40px;
+}
+
+.productos .content-bottom-card p {
   width: 70%;
   text-align: left;
   color: #49a083;
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
+  margin: 0;
+  margin-bottom: 20px;
 }
-/*# sourceMappingURL=equipo.css.map */
+/*# sourceMappingURL=productos.css.map */

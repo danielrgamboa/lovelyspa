@@ -19,7 +19,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
   background-image: url("../img/fondoJuego.png");
   background-color: white;
   background-position: center;
@@ -98,7 +97,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 90vh;
+  min-height: 70vh;
   padding: 0 130px;
 }
 
@@ -139,11 +138,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -159,9 +158,9 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: center;
@@ -169,20 +168,18 @@
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 100px;
 }
 
-.productos .content-bottom-card img {
-  margin-right: 40px;
-}
-
-.productos .content-bottom-card p {
-  width: 70%;
+.productos .content-bottom-card-text {
+  width: 100%;
   text-align: left;
   color: #49a083;
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
-  margin: 0;
-  margin-bottom: 20px;
+}
+
+.productos .content-bottom-card-text p {
+  margin-right: 50px;
+  width: 70%;
 }
 /*# sourceMappingURL=productos.css.map */

@@ -177,4 +177,121 @@
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
 }
+
+.florUno {
+  position: fixed;
+  -webkit-animation-name: florUno;
+          animation-name: florUno;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+  top: 1px;
+  left: 10px;
+}
+
+.florDos {
+  position: fixed;
+  -webkit-animation-name: florDos;
+          animation-name: florDos;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+  top: 40px;
+  left: -50px;
+}
+
+.florTres {
+  position: fixed;
+  -webkit-animation-name: florTres;
+          animation-name: florTres;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 5;
+  top: -40px;
+  left: -50px;
+}
+
+@-webkit-keyframes florUno {
+  from {
+    -webkit-transform: rotate(0) scale(0.2);
+            transform: rotate(0) scale(0.2);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(0.3);
+            transform: rotate(360deg) scale(0.3);
+  }
+}
+
+@keyframes florUno {
+  from {
+    -webkit-transform: rotate(0) scale(0.2);
+            transform: rotate(0) scale(0.2);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(0.3);
+            transform: rotate(360deg) scale(0.3);
+  }
+}
+
+@-webkit-keyframes florDos {
+  from {
+    -webkit-transform: rotate(-50deg) scale(0.18);
+            transform: rotate(-50deg) scale(0.18);
+  }
+  to {
+    -webkit-transform: rotate(410deg) scale(0.22);
+            transform: rotate(410deg) scale(0.22);
+  }
+}
+
+@keyframes florDos {
+  from {
+    -webkit-transform: rotate(-50deg) scale(0.18);
+            transform: rotate(-50deg) scale(0.18);
+  }
+  to {
+    -webkit-transform: rotate(410deg) scale(0.22);
+            transform: rotate(410deg) scale(0.22);
+  }
+}
+
+@-webkit-keyframes florTres {
+  from {
+    -webkit-transform: rotate(500deg) scale(0.14);
+            transform: rotate(500deg) scale(0.14);
+  }
+  to {
+    -webkit-transform: rotate(-80deg) scale(0.18);
+            transform: rotate(-80deg) scale(0.18);
+  }
+}
+
+@keyframes florTres {
+  from {
+    -webkit-transform: rotate(500deg) scale(0.14);
+            transform: rotate(500deg) scale(0.14);
+  }
+  to {
+    -webkit-transform: rotate(-80deg) scale(0.18);
+            transform: rotate(-80deg) scale(0.18);
+  }
+}
 /*# sourceMappingURL=equipo.css.map */

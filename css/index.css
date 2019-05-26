@@ -51,10 +51,18 @@
           align-items: flex-start;
   margin-top: 40px;
   padding: 0 130px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .index header nav .nav-logo img {
   width: 50%;
+  min-width: 130px;
+}
+
+.index header nav .nav-resp {
+  display: none;
 }
 
 .index header nav .nav-text a {
@@ -98,13 +106,14 @@
 
 .index .content article {
   margin: 0 50px;
+  width: 50%;
 }
 
 .index .content article p {
   font-family: "Quicksand", sans-serif;
   color: #49a083;
   font-size: 20px;
-  width: 70%;
+  width: 100%;
   margin-bottom: 50px;
 }
 
@@ -125,5 +134,80 @@
 .index .content article a:hover {
   background: #86b86b;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .index header nav .nav-resp {
+    display: block;
+  }
+  .index header nav .nav-text {
+    display: none;
+  }
+  .index .content {
+    width: 80%;
+  }
+  .index .content article p {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .index header nav {
+    padding: 0 20px;
+  }
+  .index header nav .nav-resp {
+    display: block;
+  }
+  .index header nav .nav-text {
+    display: none;
+  }
+  .index .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .index .content article {
+    width: 100%;
+    text-align: center;
+  }
+  .index .content article p {
+    width: 100%;
+    padding: 0 150px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .index .content article:first-child img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .index .content article p {
+    padding: 0 40px;
+  }
+  .florUno {
+    display: none;
+  }
+  .florDos {
+    display: none;
+  }
+  .florTres {
+    display: none;
+  }
 }
 /*# sourceMappingURL=index.css.map */

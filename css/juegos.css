@@ -1,19 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
-.florUno {
-  position: fixed;
-  -webkit-animation-name: florUno;
-          animation-name: florUno;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  z-index: 5;
-}
-
 .juego {
   background: white;
   height: 100vh;
@@ -56,9 +41,8 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   -webkit-box-align: start;
@@ -70,6 +54,10 @@
 
 .juego header nav .nav-logo img {
   width: 50%;
+}
+
+.juego header nav .nav-resp {
+  display: none;
 }
 
 .juego header nav .nav-text a {
@@ -93,59 +81,6 @@
 .juego header nav .nav-text a:hover {
   opacity: 1;
   color: #49a083;
-}
-
-.juego .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 70vh;
-  width: 60%;
-}
-
-.juego .content article {
-  margin: 0 50px;
-}
-
-.juego .content article p {
-  font-family: "Quicksand", sans-serif;
-  color: #49a083;
-  font-size: 20px;
-  width: 70%;
-  margin-bottom: 50px;
-}
-
-.juego .content article a {
-  background: #9dd67e;
-  color: white;
-  border: none;
-  padding: 12px 35px;
-  border-bottom: solid 7px #2b8063;
-  font-family: "Quicksand", sans-serif;
-  font-weight: bold;
-  letter-spacing: .5px;
-  text-decoration: none;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
-
-.juego .content article a:hover {
-  background: #86b86b;
-  cursor: pointer;
 }
 
 .florUno {
@@ -262,6 +197,39 @@
   to {
     -webkit-transform: rotate(-80deg) scale(0.18);
             transform: rotate(-80deg) scale(0.18);
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .juego header nav .nav-resp {
+    display: block;
+  }
+  .juego header nav .nav-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .juego header nav {
+    padding: 0 20px;
+  }
+  .juego header nav .nav-resp {
+    display: block;
+  }
+  .juego header nav .nav-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .florUno {
+    display: none;
+  }
+  .florDos {
+    display: none;
+  }
+  .florTres {
+    display: none;
   }
 }
 /*# sourceMappingURL=juegos.css.map */

@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
 .personal {
   background: white;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,8 +8,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: colum;
+      flex-wrap: colum;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -19,7 +18,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../img/fondoJuego.png");
+  background-image: url("../img/fondoIndex.png");
   background-color: white;
   background-position: center;
   background-size: cover;
@@ -40,9 +39,8 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   -webkit-box-align: start;
@@ -50,10 +48,18 @@
           align-items: flex-start;
   margin-top: 40px;
   padding: 0 130px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .personal header nav .nav-logo img {
   width: 50%;
+  min-width: 130px;
+}
+
+.personal header nav .nav-resp {
+  display: none;
 }
 
 .personal header nav .nav-text a {
@@ -68,41 +74,21 @@
   opacity: .5;
 }
 
+.personal header nav .nav-text a:hover {
+  opacity: 1;
+  color: #49a083;
+}
+
 .personal header nav .nav-text-select {
   color: #49a083 !important;
   opacity: 1 !important;
   border-bottom: solid 2px #49a083;
 }
 
-.personal header nav .nav-text a:hover {
-  opacity: 1;
-  color: #49a083;
-}
-
 .personal .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 70vh;
-  padding: 0 130px;
-}
-
-.personal .content article {
-  width: 80%;
+  width: 50%;
+  height: 100vh;
+  padding: 0 120px;
 }
 
 .personal .content-top {
@@ -113,16 +99,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 
 .personal .content-bottom {
@@ -135,20 +124,17 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .personal .content-bottom-card {
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,24 +144,24 @@
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  width: 40%;
+  margin: 30px 20px;
 }
 
 .personal .content-bottom-card p {
-  width: 70%;
-  text-align: left;
-  color: #49a083;
+  width: 100%;
   font-family: "Quicksand", sans-serif;
-  font-size: 18px;
+  color: #49a083;
+  text-align: justify;
+  margin: 0;
 }
 
 .florUno {
@@ -292,6 +278,184 @@
   to {
     -webkit-transform: rotate(-80deg) scale(0.18);
             transform: rotate(-80deg) scale(0.18);
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .personal header nav .nav-resp {
+    display: block;
+  }
+  .personal header nav .nav-text {
+    display: none;
+  }
+  .personal .content {
+    width: 80%;
+    height: 100vh;
+    padding: 0 120px;
+  }
+  .personal .content-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 50px;
+  }
+  .personal .content-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .personal .content-bottom-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 40%;
+    margin: 30px 20px;
+  }
+  .personal .content-bottom-card p {
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    color: #49a083;
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .personal header nav {
+    padding: 0 20px;
+  }
+  .personal header nav .nav-resp {
+    display: block;
+  }
+  .personal header nav .nav-text {
+    display: none;
+  }
+  .personal .content {
+    width: 80%;
+    height: 100vh;
+    padding: 0;
+  }
+  .personal .content-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+  .personal .content-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .personal .content-bottom-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 80%;
+    margin: 30px 20px;
+  }
+  .personal .content-bottom-card p {
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    color: #49a083;
+    text-align: justify;
+    margin: 0;
+  }
+  .personal .florUno {
+    display: none;
+  }
+  .personal .florDos {
+    display: none;
+  }
+  .personal .florTres {
+    display: none;
   }
 }
 /*# sourceMappingURL=equipo.css.map */

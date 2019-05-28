@@ -168,7 +168,7 @@ class Logica {
                     this.empezar = 5;
                     this.userJugado[0] = true;
                     for (let i = 0; i < 25; i++) {
-                        this.granos[i] = new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1));
+                        this.granos[i] = new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1));
                         console.log(this.granos[i].getTipo());
                     }
                     this.estado = "juego";
@@ -268,7 +268,7 @@ class Logica {
                     this.userJugado[1] = true;
                     this.granos = [];
                     for (let i = 0; i < 25; i++) {
-                        this.granos[i] = new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1));
+                        this.granos[i] = new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1));
                         console.log(this.granos[i].getTipo());
                     }
                     this.puntosA = 0;
@@ -361,7 +361,7 @@ class Logica {
                     if (this.app.dist(this.granos[i].getX(), this.granos[i].getY(), this.app.mouseX, this.app.mouseY) < 10) {
                         if (this.granos[i].getTipo() == 0) {
                             this.puntosC += 1;
-                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1)));
 
                             if (this.mmm) {
                                 this.mmm.play();
@@ -369,14 +369,14 @@ class Logica {
                         }
                         if (this.granos[i].getTipo() == 1) {
                             this.puntosB += 1;
-                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1)));
                             if (this.mmm) {
                                 this.mmm.play();
                             }
                         }
                         if (this.granos[i].getTipo() == 2) {
                             this.puntosA += 1;
-                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1)));
                             if (this.mmm) {
                                 this.mmm.play();
                             }
@@ -384,7 +384,7 @@ class Logica {
 
                         if (this.granos[i].getTipo() == 3) {
                             this.puntosD += 1;
-                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1)));
                             this.error = true;
                             if (this.auch) {
                                 this.auch.play();

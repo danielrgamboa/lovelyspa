@@ -18,6 +18,10 @@ class Granos {
             case 2:
                 this.img = app.loadImage("./img/grano3.png");
             break;
+
+            case 3:
+                this.img = app.loadImage("./img/grano4.png");
+            break;
         }
 
         switch (this.pos){

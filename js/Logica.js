@@ -18,7 +18,7 @@ class Logica {
         this.app.soundFormats('mp3', 'wav');
         this.mmm = app.loadSound('./sounds/mmm.mp3')
         this.auch = app.loadSound('./sounds/auch.wav')
-        this.fondo = app.loadSound('./sounds/fondo.mp3');
+        this.fondo = app.loadSound('./sounds/Waterfall.mp3');
         this.alarma = app.loadSound('./sounds/alarma.wav');
         this.fondoSonando = true;
 
@@ -77,6 +77,13 @@ class Logica {
         this.puntosD = 0;
         this.ganador = "";
 
+        //textos
+        this.contador = 0;
+        this.escribirUno = false;
+        this.escribirDos = false;
+        this.usUn = "";
+        this.usDo ="";
+
     }
 
     pintar() {
@@ -121,7 +128,7 @@ class Logica {
                 this.app.imageMode(this.app.CENTER);
                 this.app.image(this.btns.nextH, 589, 521);
 
-                let usUn = "";
+                /*let usUn = "";
                 let usDo = "";
                 if (this.user[0] == '') {
                     usUn = prompt("¿Cual es el nombre del jugador 1?");
@@ -132,7 +139,7 @@ class Logica {
                     usDo = prompt("¿Cual es el nombre del jugador 2?");
                     this.user[1] = usDo;
                     usDo = "";
-                }
+                }*/
 
                 this.app.textFont(this.fuente);
                 this.app.fill(226, 204, 186);
@@ -331,25 +338,18 @@ class Logica {
 
             case "nombres":
                 //Cambiar nombre de jugador 1
-                if (this.app.mouseX >= 296 && this.app.mouseX <= 461 && this.app.mouseY >= 275 && this.app.mouseY <= 299) {
-                    this.user[0] = "";
-                    let usUn = "";
-                    if (this.user[0] == '') {
-                        usUn = prompt("¿Cual es el nombre del jugador 1?");
-                        this.user[0] = usUn;
-                        usUn = "";
-                    }
+                if (this.app.mouseX >= 254 && this.app.mouseX <= 493 && this.app.mouseY >= 318 && this.app.mouseY <= 372) {
+                    this.escribirUno = true;
+                } else {
+                    this.escribirUno = false;
                 }
 
-                if (this.app.mouseX >= 727 && this.app.mouseX <= 895 && this.app.mouseY >= 275 && this.app.mouseY <= 299) {
-                    this.user[1] = "";
-                    let usDo = "";
-                    if (this.user[1] == '') {
-                        usDo = prompt("¿Cual es el nombre del jugador 2?");
-                        this.user[1] = usDo;
-                        usDo = "";
-                    }
+                if (this.app.mouseX >= 686 && this.app.mouseX <= 924 && this.app.mouseY >= 318 && this.app.mouseY <= 372) {
+                    this.escribirDos = true;
+                } else {
+                    this.escribirDos = false;
                 }
+                
 
                 if (this.app.mouseX >= 484 && this.app.mouseX <= 676 && this.app.mouseY >= 532 - 50 && this.app.mouseY <= 595 - 50) {
                     this.estado = "tiempoUno";
@@ -437,6 +437,41 @@ class Logica {
         if (this.segundosEmpezar == 60) {
             this.minutosEmpezar++;
             this.segundosEmpezar = 0;
+        }
+    }
+
+    //Funcio donde escribo en la pantalla de colocar los nombre
+    texto() {
+        //Opcion para escribir dentro del campo de texto del usuario 1
+        if (this.escribirUno) {
+            this.usUn += this.app.key;
+            this.user[0] = this.usUn;
+            console.log(this.usUn);
+        }
+
+        //Opcion para escribir dentro del campo de texto del usuario 2
+        if (this.escribirDos) {
+            this.usDo += this.app.key;
+            this.user[1] = this.usDo;
+            console.log(this.usDo);
+        }
+    }
+//Funcion donde se elimna los nombres
+    eliminar(){
+        //Opciones para eliminar texto dentro del campo del texto del usuario 1
+        if(this.app.keyCode == this.app.BACKSPACE){
+            if(this.escribirUno){
+                this.contador -=1;
+                this.usUn = this.usUn.slice(0,-1);
+                this.user[0] = this.usUn;
+
+            }
+                //Opciones para eliminar texto dentro del campo del texto del usuario 2
+            if(this.escribirDos){
+                this.contador -=1;
+                this.usDo = this.usDo.slice(0,-1);
+                this.user[1] = this.usDo;
+        }
         }
     }
 }

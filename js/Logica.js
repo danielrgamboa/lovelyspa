@@ -8,9 +8,19 @@ class Logica {
         this.fuente = this.app.loadFont("./fonts/Quicksand-Bold.ttf");
         this.segundosEmpezar = 0;
         this.minutosEmpezar = 0;
-        this.empezar = 3;
+        this.empezar = 5;
         this.juego = 30;
         this.mili = 0;
+        this.error = false;
+        this.quitarError = 1;
+
+        //sonidos
+        this.app.soundFormats('mp3', 'wav');
+        this.mmm = app.loadSound('./sounds/mmm.mp3')
+        this.auch = app.loadSound('./sounds/auch.wav')
+        this.fondo = app.loadSound('./sounds/fondo.mp3');
+        this.alarma = app.loadSound('./sounds/alarma.wav');
+        this.fondoSonando = true;
 
         //pantallas
         this.pantallas = [];
@@ -70,6 +80,7 @@ class Logica {
     }
 
     pintar() {
+
         switch (this.estado) {
             case "inicio":
                 this.app.imageMode(this.app.CORNER);
@@ -95,6 +106,12 @@ class Logica {
                 } else {
                     this.app.image(this.btns.play, 1071, 658);
                 }
+
+                //Suena la cancion de fondo
+               /* if (this.fondo) {
+                    this.fondo.play();
+                    this.fondoSonando = false;
+                }*/
                 break;
 
             case "nombres":
@@ -148,7 +165,7 @@ class Logica {
                     this.segundosEmpezar = 0;
                     this.minutosEmpezar = 0;
                     this.juego = 30;
-                    this.empezar = 3;
+                    this.empezar = 5;
                     this.userJugado[0] = true;
                     for (let i = 0; i < 25; i++) {
                         this.granos[i] = new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1));
@@ -173,7 +190,6 @@ class Logica {
 
                 setInterval(this.tiempoEmpezar(), 1000);
                 var tiempo = this.juego - this.segundosEmpezar;
-
                 this.app.textFont(this.fuente);
                 this.app.fill(78, 46, 20);
                 this.app.textAlign(this.app.CENTER);
@@ -181,8 +197,19 @@ class Logica {
                 this.app.text(tiempo + " segundos", 280, 96);
                 this.app.textAlign(this.app.LEFT);
                 this.app.text(this.userJugando, 180, 43);
-                this.app.text(this.userJugado[0] + this.userJugado[1], 500, 250);
+                if (this.error) {
+                    this.app.tint(255, 0, 0, 50);
+                    var tiempoTint = this.quitarError - this.segundosEmpezar;
+                    console.log(tiempoTint + " : ");
 
+                    if (tiempoTint <= 0) {
+                        this.error = false;
+                        console.log(this.error + " : ");
+                    }
+                } else {
+                    this.app.noTint();
+                }
+                //this.app.text(this.userJugado[0] + this.userJugado[1], 500, 250);
                 this.app.textAlign(this.app.LEFT);
                 this.app.textSize(20);
                 this.app.text(this.puntosA, 628, 72);
@@ -190,16 +217,20 @@ class Logica {
                 this.app.text(this.puntosC, 965, 72);
                 this.app.text(this.puntosD, 1126, 72);
 
-                for (let i = 0; i < 25; i++) {
+                for (let i = 0; i < this.granos.length; i++) {
                     this.granos[i].pintar();
                 }
+                console.log(this.granos.length);
 
                 if (tiempo <= 0) {
+                    if(this.alarma){
+                        this.alarma.play();
+                    }
                     if (this.userJugado[0] == true && this.userJugado[1] == false) {
-                        this.punt[0] = this.puntosA + this.puntosB + this.puntosC + this.puntosD;
+                        this.punt[0] = (this.puntosA * 1) + (this.puntosB * 2) + (this.puntosC * 3) - (this.puntosD * 2);
                         this.estado = "tiempoDos";
                     } else if (this.userJugado[0] == true && this.userJugado[1] == true) {
-                        this.punt[1] = this.puntosA + this.puntosB + this.puntosC + this.puntosD;
+                        this.punt[1] = (this.puntosA * 1) + (this.puntosB * 2) + (this.puntosC * 3) - (this.puntosD * 2);
                         console.log(this.punt[0] + " : " + this.punt[1]);
                         this.estado = "puntuacion"
                     }
@@ -232,9 +263,8 @@ class Logica {
                     this.mili = 0;
                     this.segundosEmpezar = 0;
                     this.minutosEmpezar = 0;
-                    this.empezar = 3;
-                    this.juego = 30
-                    ;
+                    this.empezar = 5;
+                    this.juego = 30;
                     this.userJugado[1] = true;
                     this.granos = [];
                     for (let i = 0; i < 25; i++) {
@@ -327,16 +357,38 @@ class Logica {
                 break;
 
             case "juego":
-                for (let i = 0; i < 25; i++) {
+                for (let i = 0; i < this.granos.length; i++) {
                     if (this.app.dist(this.granos[i].getX(), this.granos[i].getY(), this.app.mouseX, this.app.mouseY) < 10) {
                         if (this.granos[i].getTipo() == 0) {
-                            this.puntosA += 1;
+                            this.puntosC += 1;
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+
+                            if (this.mmm) {
+                                this.mmm.play();
+                            }
                         }
                         if (this.granos[i].getTipo() == 1) {
                             this.puntosB += 1;
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            if (this.mmm) {
+                                this.mmm.play();
+                            }
                         }
                         if (this.granos[i].getTipo() == 2) {
-                            this.puntosC += 1;
+                            this.puntosA += 1;
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            if (this.mmm) {
+                                this.mmm.play();
+                            }
+                        }
+
+                        if (this.granos[i].getTipo() == 3) {
+                            this.puntosD += 1;
+                            this.granos.push(new Granos(this.app, Math.round(Math.random() * 2), Math.round(Math.random() * 1)));
+                            this.error = true;
+                            if (this.auch) {
+                                this.auch.play();
+                            }
                         }
                         this.granos[i].setMostrar(false);
                     }

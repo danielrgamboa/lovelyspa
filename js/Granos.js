@@ -40,7 +40,6 @@ class Granos {
         if(this.mostrar){
             this.app.fill(255,0,0);
             this.app.imageMode(this.app.CENTER);
-            //this.app.circle(this.x, this.y, 30);
             this.app.image(this.img,this.x,this.y, 15,15);
         }
     }

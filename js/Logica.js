@@ -5,6 +5,7 @@ class Logica {
 
         //Variables Generales
         this.estado = "inicio";
+        this.est = 0;
         this.fuente = this.app.loadFont("./fonts/Quicksand-Bold.ttf");
         this.segundosEmpezar = 0;
         this.minutosEmpezar = 0;
@@ -88,8 +89,8 @@ class Logica {
 
     pintar() {
 
-        switch (this.estado) {
-            case "inicio":
+        switch (this.est) {
+            case 0:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.pantallas[0], 0, 0);
 
@@ -121,7 +122,7 @@ class Logica {
                 }*/
                 break;
 
-            case "nombres":
+            case 1:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.pantallas[1], 0, 0);
 
@@ -149,7 +150,7 @@ class Logica {
                 this.app.text(this.user[1], 810, 357)
                 break;
 
-            case "tiempoUno":
+            case 2:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.pantallas[2], 0, 0);
                 this.userJugando = this.user[0];
@@ -178,11 +179,11 @@ class Logica {
                         this.granos[i] = new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1));
                         console.log(this.granos[i].getTipo());
                     }
-                    this.estado = "juego";
+                    this.est = 3;
                 }
                 break;
 
-            case "juego":
+            case 3:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.pantallas[3], 0, 0);
 
@@ -235,11 +236,11 @@ class Logica {
                     }
                     if (this.userJugado[0] == true && this.userJugado[1] == false) {
                         this.punt[0] = (this.puntosA * 1) + (this.puntosB * 2) + (this.puntosC * 3) - (this.puntosD * 2);
-                        this.estado = "tiempoDos";
+                        this.est = 4;
                     } else if (this.userJugado[0] == true && this.userJugado[1] == true) {
                         this.punt[1] = (this.puntosA * 1) + (this.puntosB * 2) + (this.puntosC * 3) - (this.puntosD * 2);
                         console.log(this.punt[0] + " : " + this.punt[1]);
-                        this.estado = "puntuacion"
+                        this.est = 5;
                     }
                     this.mili = 0;
                     this.segundosEmpezar = 0;
@@ -248,7 +249,7 @@ class Logica {
 
                 break;
 
-            case "tiempoDos":
+            case 4:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.pantallas[2], 0, 0);
                 this.userJugando = this.user[1];
@@ -282,12 +283,12 @@ class Logica {
                     this.puntosB = 0;
                     this.puntosC = 0;
                     this.puntosD = 0;
-                    this.estado = "juego";
+                    this.est = 3;
                 }
                 break;
 
 
-            case "puntuacion":
+            case 5:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.pantallas[2], 0, 0);
                 this.app.textFont(this.fuente);
@@ -329,14 +330,14 @@ class Logica {
     click() {
         console.log(this.app.mouseX + " : " + this.app.mouseY);
 
-        switch (this.estado) {
-            case "inicio":
+        switch (this.est) {
+            case 0:
                 if (this.app.mouseX >= 989 && this.app.mouseX <= 1164 && this.app.mouseY >= 608 && this.app.mouseY <= 680) {
-                    this.estado = "nombres";
+                    this.est = 1;
                 }
                 break;
 
-            case "nombres":
+            case 1:
                 //Cambiar nombre de jugador 1
                 if (this.app.mouseX >= 254 && this.app.mouseX <= 493 && this.app.mouseY >= 318 && this.app.mouseY <= 372) {
                     this.escribirUno = true;
@@ -352,11 +353,11 @@ class Logica {
                 
 
                 if (this.app.mouseX >= 484 && this.app.mouseX <= 676 && this.app.mouseY >= 532 - 50 && this.app.mouseY <= 595 - 50) {
-                    this.estado = "tiempoUno";
+                    this.est = 2;
                 }
                 break;
 
-            case "juego":
+            case 3:
                 for (let i = 0; i < this.granos.length; i++) {
                     if (this.app.dist(this.granos[i].getX(), this.granos[i].getY(), this.app.mouseX, this.app.mouseY) < 10) {
                         if (this.granos[i].getTipo() == 0) {
@@ -395,9 +396,9 @@ class Logica {
                 }
                 break;
 
-            case "puntuacion":
+            case 5:
                 if (this.app.mouseX >= 484 && this.app.mouseX <= 676 && this.app.mouseY >= 532 - 50 && this.app.mouseY <= 595 - 50) {
-                    this.estado = "inicio";
+                    this.est = 0;
                     this.user[0] = "";
                     this.user[1] = "";
                     this.userJugando = "";

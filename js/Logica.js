@@ -235,10 +235,10 @@ class Logica {
                         this.alarma.play();
                     }
                     if (this.userJugado[0] == true && this.userJugado[1] == false) {
-                        this.punt[0] = (this.puntosA * 1) + (this.puntosB * 2) + (this.puntosC * 3) - (this.puntosD * 2);
+                        this.punt[0] = (this.puntosA * 1) + (this.puntosB * 2) - (this.puntosC * 1) - (this.puntosD * 2);
                         this.est = 4;
                     } else if (this.userJugado[0] == true && this.userJugado[1] == true) {
-                        this.punt[1] = (this.puntosA * 1) + (this.puntosB * 2) + (this.puntosC * 3) - (this.puntosD * 2);
+                        this.punt[1] = (this.puntosA * 1) + (this.puntosB * 2) - (this.puntosC * 1) - (this.puntosD * 2);
                         console.log(this.punt[0] + " : " + this.punt[1]);
                         this.est = 5;
                     }
@@ -363,9 +363,10 @@ class Logica {
                         if (this.granos[i].getTipo() == 0) {
                             this.puntosC += 1;
                             this.granos.push(new Granos(this.app, Math.round(Math.random() * 3), Math.round(Math.random() * 1)));
+                            this.error = true;
 
-                            if (this.mmm) {
-                                this.mmm.play();
+                            if (this.auch) {
+                                this.auch.play();
                             }
                         }
                         if (this.granos[i].getTipo() == 1) {
@@ -424,8 +425,6 @@ class Logica {
                 break;
         }
     }
-
-
 
     tiempoEmpezar() {
         this.mili++;

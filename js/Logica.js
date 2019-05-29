@@ -25,7 +25,7 @@ class Logica {
 
         //pantallas
         this.pantallas = [];
-        this.pantallas[0] = app.loadImage("./img/PantallaUno.png");
+        this.pantallas[0] = app.loadImage("./img/pantallaUno.png");
         this.pantallas[1] = app.loadImage("./img/jugUno.png");
         this.pantallas[2] = app.loadImage("./img/tiempo.png");
         this.pantallas[3] = app.loadImage("./img/juego.png");
